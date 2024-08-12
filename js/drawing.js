@@ -22,18 +22,33 @@ game.drawStructure = function (name, x, y) {
 }
 
 game.drawPlayer = function () {
-	actualPlayerTile = game.player.animations[game.player.direction][game.player.animationFrameNumber % 4]
-	game.context.drawImage(
-		game.textures,
-		actualPlayerTile.tileColumn * game.options.tileWidth,
-		actualPlayerTile.tileRow * game.options.tileHeight,
-		game.options.tileWidth,
-		game.options.tileHeight,
-		Math.round(game.options.canvasWidth / 2 - game.options.tileWidth / 2),
-		Math.round(game.options.canvasHeight / 2 - game.options.tileHeight / 2),
-		game.options.tileWidth,
-		game.options.tileHeight
-	)
+	// actualPlayerTile = game.player.animations[game.player.direction][game.player.animationFrameNumber % 4]
+	// game.context.drawImage(
+	// 	game.textures,
+	// 	actualPlayerTile.tileColumn * game.options.tileWidth,
+	// 	actualPlayerTile.tileRow * game.options.tileHeight,
+	// 	game.options.tileWidth,
+	// 	game.options.tileHeight,
+	// 	Math.round(game.options.canvasWidth / 2 - game.options.tileWidth / 2),
+	// 	Math.round(game.options.canvasHeight / 2 - game.options.tileHeight / 2),
+	// 	game.options.tileWidth,
+	// 	game.options.tileHeight
+	// )
+
+	var cubeSize = Math.min(game.options.tileWidth, game.options.tileHeight);
+    
+    // Vị trí giữa màn hình
+    var centerX = Math.round(game.options.canvasWidth / 2 - cubeSize / 2);
+    var centerY = Math.round(game.options.canvasHeight / 2 - cubeSize / 2);
+    
+    // Vẽ hình vuông
+    game.context.fillStyle = 'red'; // Màu của hình vuông, bạn có thể thay đổi
+    game.context.fillRect(centerX, centerY, cubeSize, cubeSize);
+    
+    // Tùy chọn: Vẽ viền cho hình vuông
+    game.context.strokeStyle = 'black';
+    game.context.lineWidth = 2;
+    game.context.strokeRect(centerX, centerY, cubeSize, cubeSize);
 }
 
 game.redraw = function () {
