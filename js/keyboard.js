@@ -48,6 +48,13 @@ game.clearMoveIntervals = function () {
 	clearInterval(game.player.moveRightInterval)
 }
 
+
+
+
+
+
+
+
 game.keydown = function (event) {
 	if (!game.pressedKeys[event.keyCode]) { // Prevent key repeating
 		switch (event.keyCode) {

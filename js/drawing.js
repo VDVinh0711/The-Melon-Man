@@ -37,15 +37,15 @@ game.drawPlayer = function () {
 
 	var cubeSize = Math.min(game.options.tileWidth, game.options.tileHeight);
     
-    // Vị trí giữa màn hình
+    
     var centerX = Math.round(game.options.canvasWidth / 2 - cubeSize / 2);
     var centerY = Math.round(game.options.canvasHeight / 2 - cubeSize / 2);
     
-    // Vẽ hình vuông
-    game.context.fillStyle = 'red'; // Màu của hình vuông, bạn có thể thay đổi
+   
+    game.context.fillStyle = 'red'; 
     game.context.fillRect(centerX, centerY, cubeSize, cubeSize);
     
-    // Tùy chọn: Vẽ viền cho hình vuông
+  
     game.context.strokeStyle = 'black';
     game.context.lineWidth = 2;
     game.context.strokeRect(centerX, centerY, cubeSize, cubeSize);
