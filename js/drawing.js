@@ -37,7 +37,7 @@ game.drawPlayer = function () {
 
 	var cubeSize = Math.min(game.options.tileWidth, game.options.tileHeight);
     
-    
+	
     var centerX = Math.round(game.options.canvasWidth / 2 - cubeSize / 2);
     var centerY = Math.round(game.options.canvasHeight / 2 - cubeSize / 2);
     
@@ -50,6 +50,8 @@ game.drawPlayer = function () {
     game.context.lineWidth = 2;
     game.context.strokeRect(centerX, centerY, cubeSize, cubeSize);
 }
+
+
 
 game.redraw = function () {
 	game.drawPending = false
@@ -90,6 +92,8 @@ game.redraw = function () {
 
 	// Draw the player
 	game.drawPlayer()
+
+	game.drawLava();
 
 	game.counter.innerHTML = "A game by Karol Swierczek | Controls: A, D / arrows and SPACE | Points: " + Math.round(-game.player.highestY / (3 * game.options.tileHeight)), game.canvas.width - 50, game.canvas.height - 12
 }
