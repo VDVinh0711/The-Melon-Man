@@ -69,6 +69,10 @@ game.keydown = function (event) {
 		case 32:
 			game.player.jump()
 			break
+		case 67:
+			game.Lava.LoopLava();
+			game.text_message.style.display ='none';
+			break
 	}
 		game.pressedKeys[event.keyCode] = true
 	}

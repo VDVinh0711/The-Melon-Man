@@ -95,4 +95,5 @@ game.generateMap = function () {
 			y: -i * 3
 		})
 	}
+
 }
